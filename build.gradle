@@ -79,3 +79,9 @@ project(":module-core") {
         implementation(project(":module-common"))
     }
 }
+
+project(":module-dao") {
+    dependencies {
+        implementation(project(":module-common"))
+    }
+}

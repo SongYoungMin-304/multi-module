@@ -1,5 +1,6 @@
 package com.dao.moduledao.entity;
 
+import com.common.modulecommon.dto.response.UserResponseDto;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,5 +12,12 @@ public class User {
     private Long id;
 
     private String name;
+
+    public UserResponseDto toResponseDto() {
+        return UserResponseDto.builder()
+                .id(id)
+                .name(name)
+                .build();
+    }
 
 }

@@ -3,6 +3,7 @@ package com.dao.moduledao.dao.jpa;
 import com.dao.moduledao.dao.UserRepository;
 import com.dao.moduledao.dao.jpa.support.Querydsl4RepositorySupport;
 import com.dao.moduledao.entity.User;
+import com.dao.moduledao.enums.DaoType;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
@@ -24,4 +25,10 @@ public class UserQueryRepository extends Querydsl4RepositorySupport implements U
                 .where(user.id.eq(id))
                 .fetchOne();
     }
+
+    @Override
+    public DaoType getDaoType() {
+        return DaoType.JPA;
+    }
+
 }
